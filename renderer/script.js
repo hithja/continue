@@ -12,14 +12,14 @@ async function analyzeText(text) {
         });
 
         if (!response.ok) {
-            throw new Error(`Ошибка API: ${response.statusText}`);
+            throw new Error(`api err: ${response.statusText}`);
         }
 
         const result = await response.json();
-        const generatedText = result[0]?.generated_text || "Текст не сгенерирован.";
+        const generatedText = result[0]?.generated_text || "no text bruh.";
         return generatedText;
     } catch (error) {
-        return `Ошибка: ${error.message}`;
+        return `err: ${error.message}`;
     }
 }
 
